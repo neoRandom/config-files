@@ -52,6 +52,10 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+  environment.plasma6.excludePackages = [
+    pkgs.kdePackages.kate
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "br";
