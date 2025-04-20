@@ -121,6 +121,7 @@
     ntfs3g
     git
     vscode
+    kdePackages.isoimagewriter
 
     # Audio/Bluetooth stuff
     bluez
