@@ -1,0 +1,173 @@
+{
+    // Nix
+    "nix.formatterPath": "nixfmt",
+
+    // Python
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "python.analysis.typeCheckingMode": "off", // strict
+
+    // JavaScript
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Kotlin
+    "kotlin.languageServer.enabled": false,
+    "kotlin.debugAdapter.enabled": false,
+
+    // PHP
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Tailwind
+    "tailwind-fold.showTailwindImage": false,
+    "files.associations": {
+        "*.css": "tailwindcss"
+    },
+
+    // Codeium
+    "codeium.enableConfig": {
+        "*": false
+    },
+
+    // Copilot
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "asm-intel-x86-generic": false
+    },
+
+    // VS Code (Editor, Explorer, Terminal etc)
+    "files.autoSave": "afterDelay",
+    "explorer.compactFolders": false,
+
+    "editor.lineNumbers": "relative",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Fira Code, 'Courier New', monospace",
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.detectIndentation": false,
+
+    "editor.unicodeHighlight.includeComments": false,
+    "editor.unicodeHighlight.includeStrings": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+
+    "workbench.colorCustomizations": {
+        "editor.background":"#1a1a1a",
+        "sideBar.background":"#181818",
+        "sideBarTitle.background":"#181818",
+        "sideBarSectionHeader.background":"#181818",
+        "badge.background":"#616161",
+        "terminal.background":"#101010",
+        "panel.background":"#202020",
+        "statusBar.background":"#1b1918",
+        "activityBar.background":"#1b1918",
+        "tab.hoverBackground":"#1f1f1f",
+        "tab.activeBackground":"#1f1f1f",
+        "tab.inactiveBackground":"#181818",
+        "tab.selectedBackground":"#222222",
+        "tab.unfocusedHoverBackground":"#1f1f1f",
+        "tab.unfocusedActiveBackground":"#1f1f1f",
+        "tab.unfocusedInactiveBackground":"#181818",
+        "menu.background":"#1f1f1f",
+        "breadcrumb.background":"#1a1a1a",
+        "editorGroupHeader.tabsBackground":"#181818",
+        "menubar.selectionBackground":"#5a5d5e4f"
+    },
+
+    "workbench.tree.indent": 40,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "right",
+
+    "terminal.integrated.letterSpacing": 2,
+    "terminal.external.linuxExec": "gnome-terminal",
+    "terminal.integrated.fontFamily": "Fira Code",
+
+    // Extensions
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "extensions.ignoreRecommendations": true,
+
+    // Prettier
+    "prettier.tabWidth": 4,
+
+    // Live Server
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+
+    // Vim
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+        "before": ["j", "k"],
+        "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // Switch between buffers
+        { "before": ["<S-h>"], "commands": [":bprevious"] },
+        { "before": ["<S-l>"], "commands": [":bnext"] },
+
+        // Splits
+        { "before": ["leader", "v"], "commands": [":vsplit"] },
+        { "before": ["leader", "s"], "commands": [":split"] },
+
+        // File ex-commands
+        { "before": ["leader", "w"], "commands": [":w!"] },
+        { "before": ["leader", "q"], "commands": [":q!"] },
+        { "before": ["leader", "x"], "commands": [":x!"] },
+
+        // Edit
+        { "before": [">"], "commands": ["editor.action.indentLines"]},
+        { "before": ["<"], "commands": ["editor.action.outdentLines"]},
+        { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+        { "before": ["<leader>", "d"], "after": ["d", "d"] },
+        {
+            "before": ["K"],
+            "commands": ["lineBreakInsert"],
+            "silent": true
+        },
+
+        // Misc
+        { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+        { "before": ["<C-n>"], "commands": [":nohl"] },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // Stay in visual mode while indenting
+        { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+        { "before": [">"], "commands": ["editor.action.indentLines"] },
+        // Move selected lines while staying in visual mode
+        { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+        { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+        // toggle comment selection
+        { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+}

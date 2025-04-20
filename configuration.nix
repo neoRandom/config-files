@@ -100,10 +100,7 @@
     isNormalUser = true;
     description = "Fellipe Leonardo";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
+    packages = with pkgs; [ ];
   };
 
   # Install firefox.
@@ -119,6 +116,7 @@
   #  wget
     ntfs3g
     git
+    vscode
 
     # Audio/Bluetooth stuff
     bluez
