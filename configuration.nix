@@ -156,11 +156,49 @@
     syntaxHighlighting.enable =  true;
 
     shellAliases = {
-        cd-nix = "cd /etc/nixos";
-        nix-nextgen = "nixos-rebuild switch";
-        nix-rollback = "nixos-rebuild switch --rollback";
+        # ===== Nix ======
+        # Misc
+        nx-dir  = "cd /etc/nixos";
+        nx-edit = "sudoedit /etc/nixos/configuration.nix";
 
-        git-reset-last = "git reset HEAD~1";
+        # System Management
+        nx-sm-nextgen  = "sudo nixos-rebuild switch";
+        nx-sm-rollback = "sudo nixos-rebuild switch --rollback";
+        nx-sm-upgrade  = "sudo nixos-rebuild switch --upgrade";
+        nx-sm-flake    = "sudo nixos-rebuild switch --flake";
+        nx-sm-upflake  = "sudo nixos-rebuild switch --upgrade --flake";
+        nx-sm-test     = "sudo nixos-rebuild test";
+        nx-sm-boot     = "sudo nixos-rebuild boot";
+
+        # Flakes
+        nx-flake = "nix flake";
+        nx-f-upd = "nix flake update";
+        nx-f-shw = "nix flake show";
+        nx-f-bld = "nix build .#";
+        nx-f-shl = "nix shell .#";
+        nx-f-dev = "nix develop .#";
+
+        # Development
+        nx-dev   = "nix develop";
+        nx-d-shl = "nix-shell";
+        nx-d-shp = "nix-shell --pure -p";
+
+        # Garbage Collection
+        nx-gc-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+        nx-gc-env-clean   = "sudo nix-env --delete-generations";
+        nx-gc-clean       = "sudo nix-collect-garbage";
+        nx-gc-ll-clean    = "sudo nix-store --gc";
+        nx-gc-clean-old   = "sudo nix-collect-garbage -d";
+        nx-gc-clean-all   = "nx-gc-ll-clean; nx-gc-clean-old";
+        
+        # ===== Git =====
+        gt            = "git";
+        gt-push-o     = "git push -u origin";
+        gt-push-m     = "git push -u origin main";
+        gt-reset-last = "git reset HEAD~1";
+
+        # ===== Misc =====
+        nv = "nvim";
     };
 
     ohMyZsh = {
