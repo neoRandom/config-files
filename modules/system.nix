@@ -37,21 +37,42 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    # System
     ntfs3g
     kdePackages.isoimagewriter
 
+    # Basic Applications
     kdePackages.kalk
     gedit
-
+    
+    # Utils
+    htop
+    fastfetch
     curl
+    wget
     git
+
+    # Programming / Development
+    python314
+    gcc
+    nasm
+    rustup
+    nodejs_22
+    deno
+    go
+    kotlin
+    jdk
+    php
+    # godot_4  # <- Godot modifies many things, aka can break the system
+    
+    # Terminal
     neovim
     zsh
     zsh-powerlevel10k
     alacritty
 
+    # Productivity
+    obsidian
     vscode
 
     # Audio/Bluetooth stuff
