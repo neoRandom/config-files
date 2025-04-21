@@ -53,7 +53,7 @@
     git
 
     # Programming / Development
-    python314
+    uv
     gcc
     nasm
     rustup
