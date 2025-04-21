@@ -130,6 +130,8 @@
     ntfs3g
     kdePackages.isoimagewriter
 
+    kdePackages.kalk
+
     curl
     git
     neovim
