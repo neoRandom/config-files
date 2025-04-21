@@ -43,7 +43,7 @@
     kdePackages.isoimagewriter
 
     kdePackages.kalk
-    sublime4
+    gedit
 
     curl
     git
@@ -58,10 +58,5 @@
     bluez
     blueman
     pulseaudio
-  ];
-
-  # Why?
-  nixpkgs.config.permittedInsecurePackages = [
-    "openssl-1.1.1w"
   ];
 }
