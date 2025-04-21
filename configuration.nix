@@ -96,11 +96,17 @@
     };
   };
 
+  # Install Fonts
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.neo = {
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "Fellipe Leonardo";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -122,15 +128,53 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
     ntfs3g
-    git
-    vscode
     kdePackages.isoimagewriter
+
+    curl
+    git
+    neovim
+    zsh
+    zsh-powerlevel10k
+    alacritty
+
+    vscode
 
     # Audio/Bluetooth stuff
     bluez
     blueman
     pulseaudio
   ];
+
+  # Z Shell (Oh My ZSH) Setup
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableBashCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable =  true;
+
+    ohMyZsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "z"
+        "npm"
+        "history"
+        "node"
+        "rust"
+        "deno"
+      ];
+    };
+
+    promptInit = ''
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+      ZSH_THEME="powerlevel10k/powerlevel10k"
+
+      export EDITOR=nvim
+    '';
+  };
 
   # Virtualisation (VirtualBox)
   virtualisation.virtualbox.host.enable = true;
