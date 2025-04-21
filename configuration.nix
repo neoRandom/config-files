@@ -155,6 +155,14 @@
     autosuggestions.enable = true;
     syntaxHighlighting.enable =  true;
 
+    shellAliases = {
+        cd-nix = "cd /etc/nixos";
+        nix-nextgen = "nixos-rebuild switch";
+        nix-rollback = "nixos-rebuild switch --rollback";
+
+        git-reset-last = "git reset HEAD~1";
+    };
+
     ohMyZsh = {
       enable = true;
       theme = "robbyrussell";
