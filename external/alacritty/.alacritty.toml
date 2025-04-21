@@ -1,0 +1,9 @@
+[window]
+
+dimensions = { columns = 112, lines = 28 }
+padding = { x = 15, y = 15 }
+opacity = 0.75
+
+[terminal]
+
+shell = "/run/current-system/sw/bin/zsh"
