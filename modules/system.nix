@@ -51,6 +51,9 @@
     curl
     wget
     git
+    tree
+    file
+    qemu
 
     # Programming / Development
     uv
