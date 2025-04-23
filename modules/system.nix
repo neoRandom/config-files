@@ -56,7 +56,7 @@
     qemu
 
     # Programming / Development
-    uv
+    python313
     gcc
     nasm
     rustup
